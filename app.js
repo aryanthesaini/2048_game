@@ -197,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keyup', control);
 
     function keyRight() {
+
         moveRight();
         combineRow();
         moveRight();
@@ -256,6 +257,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+
+    reset.addEventListener("click", function () {
+        for (let i = 0; i < width * width; i++) {
+            squares[i].innerHTML = 0;
+        }
+        score = 0;
+        scoreDisplay.innerHTML = 0;
+        resultDisplay.innerHTML = "";
+        document.addEventListener('keyup', control);
+        generate();
+        generate();
+    });
 
 
 
